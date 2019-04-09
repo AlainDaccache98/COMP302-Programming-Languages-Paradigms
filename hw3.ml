@@ -1,3 +1,13 @@
+(* Helpers *)
+let rec memberof (n, l) =
+  match l with
+  | [] -> false
+  | x :: xs -> if x = n then true else memberof (n, xs)
+;;
+
+let remove (item, lst) =
+  List.filter (fun u -> not (u = item)) lst
+
 (* Question 1. *)
 
 let rec common twolists = 
