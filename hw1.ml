@@ -1,3 +1,14 @@
+(* Helpers *)
+
+let close ((x: float), (y: float)) = abs_float (x -. y) < 0.0001;;
+
+let square (x: float) = x *. x;;
+
+let cube (x:float) = x *. x*. x;;
+
+let odd n = (n mod 2) = 1;;
+
+(* Square Root *)
 let mysqrt (x:float) =
   let rec aux a = 
     let result = ((x /. a +. a) /. 2.0)
@@ -7,7 +18,8 @@ let mysqrt (x:float) =
   in 
   aux 0.0001
 ;;
-  
+
+(* Cube Root *)
 let cube_root (x:float) = 
   let rec aux a = 
     let result = (((a *. 2.0) +. (x /. square(a))) /. 3.0)
@@ -18,6 +30,7 @@ let cube_root (x:float) =
   aux 0.00001
 ;;
 
+(* Russian Peasant Exponentiation *)
 let fast_exp (base, power) =
   let rec aux (acc, base, power) =
     if power = 0 then acc
