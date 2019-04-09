@@ -1,5 +1,4 @@
 (* Helper *)
-
 let rec sumlist l =
   match l with
   | [] -> 0.0
